@@ -19,11 +19,11 @@ For file post request
 
 ## All api in routes/endpoints.js file
 
-http://localhost:3000/filePost
+# 1. http://localhost:3000/filePost
 parameter to pass
 1. file
 
-Send message done through chat UI
+# 2. Send message done through chat UI
 for chat interface vist - http://localhost:3000/
 1. In chat interface enter username
 2. select a group for chat
@@ -32,12 +32,12 @@ for chat interface vist - http://localhost:3000/
 5. send message you would get message in both interfaces
 
 
-http://localhost:3000/groupChat  (Get conversation list)
+# 3. http://localhost:3000/groupChat  (Get conversation list)
 parameter to pass 
 1. groupId: { type: String }
 
 
-http://localhost:3000/deleteChat  (Delete messages only from his account)
+# 4. http://localhost:3000/deleteChat  (Delete messages only from his account)
 parameter to pass
 1. messageTime: { type: Date },
 2. userId: { type: String },
@@ -45,20 +45,17 @@ parameter to pass
 
 ## database structure would be like
 
-Table - User (my collection name as chatusers)
------------------------------------------------
+# Table - User (my collection name as chatusers)
 userId    userName    userCreatedAt
 
 
 
-Table - Group (my collection name as chatgroups)
--------------------------------------------------
+# Table - Group (my collection name as chatgroups)
 groupId   groupName    groupCreatedAt
 
 
 
-Table - Message (my collection name as messages)
--------------------------------------------------
+# Table - Message (my collection name as messages)
 messageId  message  messageTime  userId   groupId
 
 
