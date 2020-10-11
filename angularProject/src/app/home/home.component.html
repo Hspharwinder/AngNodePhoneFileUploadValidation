@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <u><h1 class="text-center">NetSet Machine Test</h1></u><br>  
+    <div class="row">
+        <form [formGroup]="formValue" (ngSubmit)="onSubmit(formValue)">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="inputName4">Name (don't allow space in begining)</label>
+                 <input [formControl]="control" class="form-control" />
+                 <small *ngIf="control.hasError('trimError')"  class="text-danger" > {{ control.errors.trimError.value }} </small>
+              </div>  
+            </div>   
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="inputName4">Phone no </label>
+                  <input type="text" 
+                    formControlName="phoneNo"  
+                    id="phoneNo" 
+                    class="form-control" 
+                    (input)="phoneFormat($event.target.value)" 
+                     maxlength="12"
+                  >
+              </div>  
+            </div> 
+
+            <div class="form-row col-md-12">
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Example file input</label>
+                <input type="file" class="form-control-file"
+                  formControlName="fileUpload" name="fileImageUrl"
+                  id="exampleFormControlFile1" (change)="uploadFile($event.target.files)"
+                  accept=".pdf"
+                >
+              </div>
+            </div>
+            <!-- {{filePost | JSON}} -->
+            <button type="button" [disabled]="extension != 'pdf'" class="btn btn-primary float-right" (click)="fileUpload()">Upload</button>
+          </form>
+    </div>  
+</div>
