@@ -83,7 +83,7 @@ io.on('connection', socket => {
     }
 
     // Listen for chatMessage
-    socket.on('chatMessage',async msg => {
+    socket.on('chatMessage', msg => {
       let user = getCurrentUser(socket.id);
       const postMsg = { 
         // userName: user.room,
